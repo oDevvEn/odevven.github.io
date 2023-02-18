@@ -1,0 +1,38 @@
+.plugin-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.plugin-title {
+    font-size: 32px;
+    text-decoration: underline;
+    color: #fff;
+}
+.plugin-text {
+    font-size: 22px;
+    color: #eee;
+}
+
+
+#plugin-one {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #1c1c1c;
+    border-style: solid;
+    border-color: #222;
+}
+#plugin-two {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: #1c1c1c;
+    border-style: solid;
+    border-color: #222;
+}
+#plugin-three {
+    grid-column: 3;
+    grid-row: 1;
+    background-color: #1c1c1c;
+    border-style: solid;
+    border-color: #222;
+}
+
