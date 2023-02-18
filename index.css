@@ -1,0 +1,16 @@
+body {
+    background-color: #111;
+}
+
+#main {
+    color: #fff;
+    text-align: center;
+}
+
+#navbar {
+    color:#333;
+    border: 0;
+}
+#navbar-text {
+    color:#fff;
+}
