@@ -1,8 +1,54 @@
 ---
 import Global from "../layouts/global.astro"
+import Project from "../components/project.astro"
+import "../styles/projects.css"
 ---
 
 <Global title="Projects">
-	<h1>projects</h1>
-	<p>work in progression</p>
+	<h1>Projects</h1>
+	<div class="projects">
+		<Project 
+			name="catboys.dev" 
+			description="This awesome site you are on currently! it was an agony to make this i hope you like it"
+			date="2025 Oct - Present"
+			active={true}
+			link="https://github.com/oDevvEn/odevven.github.io/"
+			background = "website"
+		/>
+
+		<Project 
+			name="Galactic Species" 
+			description="A space game being created in Unity for college NEA (worth 20% of my grade). Repository currently private, sowy~"
+			date="2025 Sep - Present"
+			active={true}
+			link="https://github.com/oDevvEn/GalacticSpecies"
+		/>
+		
+		<Project 
+			name="Complex Graphing" 
+			description="First C++ & OpenGL project that isn't just a triangle! The intention of this small project was to use GPU to compute and graph complex numbers"
+			date="2025 Mar - 2025 Mar"
+			active={false}
+			link="https://github.com/oDevvEn/Complex-Graphing"
+			background="complexgraphing"
+		/>
+
+		<Project 
+			name="Sinking Souls" 
+			description="Game created within 48 hours for Global Game Jam 2025, working in a team of 4 (consisting of 2 programmers including me and 2 artists)"
+			date="2025 Jan - 2025 Jan"
+			active={false}
+			link="https://github.com/oDevvEn/Bubbles"
+			background="sinkingsouls"
+		/>
+		
+		<Project 
+			name="Blue Lagoon \n (Chaos Edition)"
+			description="The board game Blue Lagoon recreated in C# & Windows Forms with some changes and additions for a college project"
+			date="2024 Oct - 2024 Dec"
+			active={false}
+			link="https://github.com/oDevvEn/BlueLagoon-ChaosEdition"
+			background = "bluelagoon"
+		/>
+	</div>
 </Global>

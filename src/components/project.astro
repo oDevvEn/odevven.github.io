@@ -1,0 +1,35 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  date: string;
+  active: boolean;
+  link: string;
+  background?: string;
+}
+
+const { name, description, date, active, link, background } = Astro.props;
+const backgroundUrl = background ? `url(/projects/${background}.png)` : "";
+---
+
+<a class="project" href={link} style={`--bg-img: ${backgroundUrl}`}>
+    <h2>{name}</h2>
+    <p>{description}</p>
+    
+    <div class="footer">
+        <p style={`color:${active ? "#00f619" : "#ff4444"}; background-color:${active ? "#2c462f" : "#5c2424"}`}>
+            {active ? "• ACTIVE" : "x DEAD"}
+        </p>
+        <!--        
+        <div class="links">
+            {Object.entries(links ?? {}).map(([site, url]) => (
+                <a href={url}>
+                    <img src={`/icons/${site.toLowerCase()}.svg`}>
+                    <p>{site.charAt(0).toUpperCase() + site.slice(1).toLowerCase()}</p>
+                </a>
+            ))}
+        </div>
+        -->
+        <p class="date">{date}</p>
+    </div>    
+</a>
