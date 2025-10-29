@@ -1,0 +1,25 @@
+---
+import "../../styles/blog.css"
+import Global from "../../layouts/global.astro"
+import BlogProperties from "../../components/blogProperties.astro";
+
+import { getCollection } from "astro:content"
+const posts = (await getCollection("blog")).sort(function(post1, post2) {
+    return post1.data.date.valueOf() < post2.data.date.valueOf() ? 1 : -1;
+});
+---
+
+<Global title="Blog">
+	<h1>Blog</h1>
+
+    <main class="blog">
+        {posts.map((post) => (
+            <a href={`/blog/${post.id}`}>
+                <h2>{post.data.title}</h2>
+                <p>{post.data.description}</p>
+                <BlogProperties post={post} id="blog"/>
+                <!-- todo: image -->
+            </a>
+        ))}
+    </main>
+</Global>

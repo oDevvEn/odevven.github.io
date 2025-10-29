@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  id: string;
+}
+
+const { post, id } = Astro.props;
+---
+
+<div class="properties" id={id}>
+    <p class="date">{post.data.date.toISOString().substring(0,10)}</p>
+    {post.data.tags && <p class="tags">{post.data.tags.join(" • ")}</p>}
+    <slot/>
+</div>

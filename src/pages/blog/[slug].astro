@@ -1,0 +1,30 @@
+---
+import "../../styles/blog.css"
+import Global from "../../layouts/global.astro"
+import BlogProperties from "../../components/blogProperties.astro";
+
+import { getCollection, render } from "astro:content";
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    return posts.map(post => ({
+        params: {slug: post.id}, props: {post}
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Global title={`Blog - ${post.data.title}`}>
+    <main class="post">
+        <a href="/blog" class="return">&lt; Return</a>
+        <h1>{post.data.title}</h1>
+        <BlogProperties post={post} id="post">
+            <p>{post.body ? post.body.split(" ").length : "nya~"} words • {post.body ? Math.ceil(post.body.split(" ").length / 180) : "nya~"} minute read</p>
+        </BlogProperties>
+
+        <hr>
+        
+        <Content/>
+    </main>
+</Global>
