@@ -36,6 +36,7 @@ nav {
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 1.5rem;
+    user-select: none;
     /*max-width: 2750px;        todo: figure this out */
     
     div {
